@@ -14,11 +14,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.onigo.kirk.adjust-example"
     },
     "android": {
       "adaptiveIcon": {
@@ -28,6 +27,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "@config-plugins/react-native-adjust",
+      "sentry-expo",
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.onigo.club",
+          "enableGooglePay": true
+        }
+      ]
+    ]
   }
 }
